@@ -1,0 +1,104 @@
+<html>
+<head>
+    
+    <title><%= siteTitle %> - <%= pageTitle %></title>
+    <meta charset="UTF-8">
+    <title>Simple App</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/partials/stylesheet.css">
+    <script src = "/js/jquery.min.js"></script>
+    <script src = "/js/tether.min.js"></script>
+    <script src = "/js/bootstrap.min.js"></script>
+    <% include('partials/head.ejs') %>
+    <style>
+        *{border-radius: 0px !important;}
+    </style>
+</head>
+<body>
+    <!-- Basic dropdown -->
+
+<!-- Basic dropdown -->
+    <nav class = "navbar navbar-dark bg-primary">
+        <span class = "navbar-brand" style = "color: #fff"><%= pageTitle %></span>
+    </nav>
+    
+    <% include('partials/navbar.ejs')  %>
+<h1> HOME PAGE</h1>
+
+<div class="">
+    <div class = "col s12">
+        <a href="/event/add" class ="btn btn-success btn-lg">Add a new Store</a>
+        <a href="/event/addtraintrip" class ="btn btn-success btn-lg">Add a new T_Trip</a>
+        <a href="/event/addtraintripcity" class ="btn btn-success btn-lg">Add a new T_Trip CITY</a>
+        <a href="/event/addtruck" class ="btn btn-success btn-lg">Add Truck</a>
+        <a href="/event/addtruckroute" class ="btn btn-success btn-lg">Add Truck Route</a>
+        <a href="/event/addtruckrouteIpoint" class ="btn btn-success btn-lg">Add Truck Route IPoint</a>
+        <a href="/event/addproduct" class ="btn btn-success btn-lg">Add Product</a>
+        <a href="/event/addperson" class ="btn btn-success btn-lg">Add Person</a>
+        <a href="/event/addcontact" class ="btn btn-success btn-lg">Add Contact</a>
+        <a href="/event/addorder" class ="btn btn-success btn-lg">Add Order</a>
+        <a href="/event/oneyearorder" class ="btn btn-success btn-lg">One Year Order</a>
+        <form action = "http://localhost:4000/event/student" method = "post" class = "col s12">
+        <div class = "form-group row">
+            <label for = "id" class = "col-2 colo-form-label">Student ID</label>
+            <div class = "col-10">
+                <input type = "text" name = "s_id" value = "" class = "form-control">
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+
+<div class="">
+    <div class = "col s12">
+        
+    </div>
+</div>
+<br>
+<div class = "=">
+    <div class="col s12">
+        <% if (items.length > 0) {%>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col"></th>
+                        <th scope="col">CITY</th>
+                        <th scope="col">STREET</th>
+                        <th scope="col">NUMBER</th>
+                        <th scope="col">CAPACITY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% items.forEach(function(item, index){ %>
+                        <tr>
+                            <td style= "width: 1%;text-align:center"><%= index + 1%></td>
+                            <td style= "width: 10%"><%= item.id %></td>
+                            <td style= "width: 20%"><%= item.city %></td>
+                            <td style= "width: 30%"><%= item.street_name %></td>
+                            <td style= "width: 30%"><%= item.number %></td>
+                            <td style= "width: 30%"><%= item.capacity %></td>
+                            
+                            <td solspan = "2" style = "width:20%; text-align:center">
+                                <a href="/event/edit/<%= item.id %>" class="btn btn-success">Edit</a>
+                            </td>
+                            <td solspan = "2" style = "width:20%; text-align:center">
+                                <a href="/event/disable/<%= item.id %>" class="btn btn-danger">DISABLE</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p><strong> There are no records available </strong></p>
+        <% } %>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+<% include('partials/footer') -%>

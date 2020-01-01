@@ -1,0 +1,47 @@
+
+<html>
+<head>
+    <title><%= siteTitle %> - <%= pageTitle %></title>
+    <meta charset="UTF-8">
+    <title>Simple App</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src = "/js/jquery.min.js"></script>
+    <script src = "/js/tether.min.js"></script>
+    <script src = "/js/bootstrap.min.js"></script>
+    <style>
+        *{border-radius: 0px !important;}
+    </style>
+</head>
+<body>
+    <nav class = "navbar navbar-dark bg-primary">
+        <span class = "navbar-brand" style = "color: #fff"><%= pageTitle %></span>
+    </nav>
+<div class="row" style="margin-top: 20px;margin-left: 20px;">
+    <form action = "http://localhost:4000/event/addtruckroute" method = "post" class = "col s12">
+        <div class = "form-group row">
+            <label for = "id" class = "col-2 colo-form-label">TRUCK ROUTE ID</label>
+            <div class = "col-10">
+                <input type = "text" name = "truck_route_id" value = "" class = "form-control">
+            </div>
+        </div>
+        <div class = "form-group row">
+            <label for = "e_start_date" class = "col-2 colo-form-label">MAXIMUM TIME</label>
+            <div class = "col-10">
+                <input type = "text" name = "maximum_time" value = "" class = "form-control">
+            </div>
+        </div>
+        <div class = "form-group row">
+            <label for = "e_name" class = "col-2 colo-form-label">STORE ID</label>
+            <div class = "col-10">
+                <input type = "text" name = "store_id" value = "" class = "form-control">
+            </div>
+        </div>
+        <div class = "form-group row">
+            <label for = "e_name" class = "col-2 colo-form-label">Submit</label>
+            <div class = "col-10">
+                <input type = "submit" name = "submit" value = "Save event" class = "btn btn-primary btn-lg">
+            </div>
+        </div>
+    </form>  
+</div>

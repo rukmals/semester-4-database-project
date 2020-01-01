@@ -1,0 +1,82 @@
+<!-- Latest compiled and minified CSS -->
+<head>
+    <title><%= siteTitle %> - <%= pageTitle %></title>
+    <meta charset="UTF-8">
+    <title>Simple App</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src = "/js/jquery.min.js"></script>
+    <script src = "/js/tether.min.js"></script>
+    <script src = "/js/bootstrap.min.js"></script>
+    <style>
+        *{border-radius: 0px !important;}
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type = "text/javascript">
+      <% /*$(document).ready(function () {
+                var list1 = document.getElementById('firstList');
+                list1.options[0] = new Option('--Select--');
+                list1.options[1] = new Option('Kandy');
+                list1.options[2] = new Option('Mathale');
+        });*/ %>
+        <% 
+        function getFoodItem(){
+            var list1 = document.getElementById('firstList');
+            var list2 = document.getElementById("secondList");
+            var list1SelectedValue = list1.options[list1.selectedIndex].value;
+            if (list1SelectedValue=='Kandy')
+            {
+                list2.options.length=0;
+                list2.options[0] = new Option('--Select--');
+                list2.options[1] = new Option(1);
+                list2.options[2] = new Option(2);
+                list2.options[3] = new Option(3);
+                list2.options[4] = new Option(4);
+                list2.options[5] = new Option(5);
+                
+            }
+            else if (list1SelectedValue=='Mathale')
+            {   
+                list2.options.length=0;
+                list2.options[0] = new Option('--Select--');
+                list2.options[1] = new Option('Coca Cola');
+                list2.options[2] = new Option('7up');
+                list2.options[3] = new Option('Pepsi');
+                list2.options[4] = new Option('Coffee');
+                list2.options[5] = new Option('Tea');
+            }
+            } %>
+    
+</script>
+</head>
+
+<body>
+ <nav class = "navbar navbar-dark bg-primary">
+        <span class = "navbar-brand" style = "color: #fff"><%= pageTitle %></span>
+</nav>
+<div class="row" style="margin-top: 20px;margin-left: 20px;">
+    <form action = "http://localhost:4000/event/addorder" method = "post" class = "col s12">
+        <div class="col-md-4">
+        <h4>DESTINATION</h4>
+        <select class="form-control"  id='firstList' name='firstList' onClick="getFoodItem()">
+        <option value="item">--select--</option>
+        <% items.forEach(function(item, index){ %>
+            <option id ="item" name = "item"><%= item.order_destination %></option>
+        <% }) %>
+        </select>
+        <h4>ROUTE</h4>
+        <select class="form-control"  id='secondList' name='secondList' >
+        <% items.forEach(function(item, index){ %>
+            <option id ="item_1"><%= item.order_id %></option>
+        <% }) %>
+        </select>
+        
+</div>
+
+</body>

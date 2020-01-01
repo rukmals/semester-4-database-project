@@ -1,0 +1,178 @@
+<html>
+<head>
+    
+    <title><%= siteTitle %> - <%= pageTitle %></title>
+    <meta charset="UTF-8">
+    <title>Simple App</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/partials/stylesheet.css">
+    <script src = "/js/jquery.min.js"></script>
+    <script src = "/js/tether.min.js"></script>
+    <script src = "/js/bootstrap.min.js"></script>
+    <style>
+        *{border-radius: 0px !important;}
+    </style>
+</head>
+<body>
+    <!-- Basic dropdown -->
+
+<!-- Basic dropdown -->
+    <nav class = "navbar navbar-dark bg-primary">
+        <span class = "navbar-brand" style = "color: #fff"><%= pageTitle %></span>
+    </nav>
+    
+<h1> HOME PAGE</h1>
+<div class="">
+    <div class = "col s12">
+        
+    </div>
+</div>
+<br>
+<div class = "=">
+    <div class="col s12">
+        <h1>FIRST QUARTER</h1>
+        <% if (items.length > 0) {%>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col"></th>
+                        <th scope="col">CITY</th>
+                        <th scope="col">STREET</th>
+                        <th scope="col">NUMBER</th>
+                        <th scope="col">CAPACITY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% items.forEach(function(item, index){ %>
+                        <tr>
+                            <td style= "width: 1%;text-align:center"><%= index + 1%></td>
+                            <td style= "width: 10%"><%= item.order_id %></td>
+                            <td style= "width: 20%"><%= item.item_id %></td>
+                            <td style= "width: 30%"><%= item.item_description %></td>
+                            <td style= "width: 30%"><%= item.ordered_date %></td>
+                            <td style= "width: 30%"><%= item.total_price %></td>
+                            
+                            
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p><strong> There are no records available </strong></p>
+        <% } %>
+    </div>
+</div>
+
+<div class = "=">
+    <div class="col s12">
+        <h1>SECOND QUARTER</h1>
+        <% if (items_1.length > 0) {%>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col"></th>
+                        <th scope="col">CITY</th>
+                        <th scope="col">STREET</th>
+                        <th scope="col">NUMBER</th>
+                        <th scope="col">CAPACITY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% items_1.forEach(function(item, index){ %>
+                        <tr>
+                            <td style= "width: 1%;text-align:center"><%= index + 1%></td>
+                            <td style= "width: 10%"><%= item.order_id %></td>
+                            <td style= "width: 20%"><%= item.item_id %></td>
+                            <td style= "width: 30%"><%= item.item_description %></td>
+                            <td style= "width: 30%"><%= item.ordered_date %></td>
+                            <td style= "width: 30%"><%= item.total_price %></td>
+                            
+                            
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p><strong> There are no records available </strong></p>
+        <% } %>
+    </div>
+</div>
+<div class = "=">
+    <div class="col s12">
+        <h1>THIRD QUARTER</h1>
+        <% if (items_2.length > 0) {%>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col"></th>
+                        <th scope="col">CITY</th>
+                        <th scope="col">STREET</th>
+                        <th scope="col">NUMBER</th>
+                        <th scope="col">CAPACITY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% items_2.forEach(function(item, index){ %>
+                        <tr>
+                            <td style= "width: 1%;text-align:center"><%= index + 1%></td>
+                            <td style= "width: 10%"><%= item.order_id %></td>
+                            <td style= "width: 20%"><%= item.item_id %></td>
+                            <td style= "width: 30%"><%= item.item_description %></td>
+                            <td style= "width: 30%"><%= item.ordered_date %></td>
+                            <td style= "width: 30%"><%= item.total_price %></td>
+                            
+                            
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p><strong> There are no records available </strong></p>
+        <% } %>
+    </div>
+</div>
+<div class = "=">
+    <div class="col s12">
+        <h1>FOURTH QUARTER</h1>
+        <% if (items_3.length > 0) {%>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col"></th>
+                        <th scope="col">CITY</th>
+                        <th scope="col">STREET</th>
+                        <th scope="col">NUMBER</th>
+                        <th scope="col">CAPACITY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% items_3.forEach(function(item, index){ %>
+                        <tr>
+                            <td style= "width: 1%;text-align:center"><%= index + 1%></td>
+                            <td style= "width: 10%"><%= item.order_id %></td>
+                            <td style= "width: 20%"><%= item.item_id %></td>
+                            <td style= "width: 30%"><%= item.item_description %></td>
+                            <td style= "width: 30%"><%= item.ordered_date %></td>
+                            <td style= "width: 30%"><%= item.total_price %></td>
+                            
+                        
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p><strong> There are no records available </strong></p>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
